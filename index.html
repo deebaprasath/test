@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Starter Website — YourBrand</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#9aa4b2;--accent:#4f46e5;--glass: rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}body{font-family:Inter,system-ui,Segoe UI,Arial;background:linear-gradient(180deg,#061021 0%, #071428 100%);color:#e6eef8;margin:0;line-height:1.45}
+    header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40;background:linear-gradient(180deg, rgba(6,9,16,0.6), rgba(6,9,16,0.35));border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem;font-weight:700}
+    .brand .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{color:var(--muted);text-decoration:none;padding:.45rem .6rem;border-radius:8px}
+    .nav-links a:hover{color:white;background:var(--glass)}
+    .cta{background:var(--accent);color:white;padding:.5rem .8rem;border-radius:10px;text-decoration:none;font-weight:600}
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr;gap:1.4rem;padding:4rem 0}
+    .hero-inner{display:flex;flex-direction:column;gap:1rem}
+    h1{font-size:2rem;margin:0}
+    p.lead{color:var(--muted);max-width:60ch}
+    .actions{display:flex;gap:1rem;align-items:center}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:1rem;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    /* features */
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+    .feature{padding:1rem;border-radius:12px;background:var(--card);border:1px solid rgba(255,255,255,0.02)}
+    .feature h3{margin:0 0 .5rem 0}
+    /* portfolio */
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1.5rem}
+    .project{height:140px;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));display:flex;align-items:flex-end;padding:.75rem}
+    /* footer */
+    footer{margin-top:3rem;padding:2rem 0;color:var(--muted)}
+    /* responsive */
+    @media(max-width:900px){.grid,.projects{grid-template-columns:repeat(2,1fr)}.hero{padding:2.2rem 0}h1{font-size:1.6rem}}
+    @media(max-width:640px){.grid,.projects{grid-template-columns:1fr}.nav-links{display:none}.menu-btn{display:inline-block}.hero{padding:2rem 0}h1{font-size:1.4rem}}
+    .menu-btn{display:none;background:transparent;border:0;color:var(--muted);font-weight:600}
+    /* contact */
+    form{display:grid;gap:.8rem}
+    input,textarea{width:100%;padding:.65rem;border-radius:8px;border:1px solid rgba(255,255,255,0.05);background:transparent;color:inherit}
+    button{padding:.65rem 1rem;border-radius:8px;border:0;background:var(--accent);color:white;font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><div class="logo">YB</div><div>YourBrand</div></div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#work">Work</a>
+          <a href="#contact">Contact</a>
+          <a class="cta" href="#contact">Get Started</a>
+        </div>
+        <button class="menu-btn" aria-expanded="false" aria-controls="mobile-menu" id="menuBtn">☰</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-inner">
+        <h1>Beautiful, fast starter website — ready to customize</h1>
+        <p class="lead">A minimal, responsive single-file template you can save as <code>index.html</code> and open in your browser. Includes navigation, hero, features, portfolio cards and a contact form.</p>
+        <div class="actions">
+          <a class="cta" href="#contact">Start a Project</a>
+          <a class="card" href="#work">See Work</a>
+        </div>
+        <div class="grid" style="margin-top:1rem">
+          <div class="feature">
+            <h3>Fast Setup</h3>
+            <p class="muted">Copy this file and open locally — no install required.</p>
+          </div>
+          <div class="feature">
+            <h3>Responsive</h3>
+            <p class="muted">Looks great on phone, tablet and desktop.</p>
+          </div>
+          <div class="feature">
+            <h3>Customizable</h3>
+            <p class="muted">Change colors, fonts, layout and sections to suit your brand.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="card" aria-hidden="true" style="margin-top:8px">
+        <strong>Quick facts</strong>
+        <p style="margin:.5rem 0 .25rem 0;color:var(--muted)">Single HTML file • No framework • 100% editable</p>
+      </aside>
+    </section>
+
+    <section id="about" style="margin-top:2rem">
+      <h2>About</h2>
+      <p class="lead">This starter website is built to be simple and practical. Use it for a portfolio, small business, or a project landing page.</p>
+    </section>
+
+    <section id="work">
+      <h2 style="margin-top:1.6rem">Recent work</h2>
+      <div class="projects">
+        <div class="project"> <div style="font-weight:600">Project Alpha</div></div>
+        <div class="project"> <div style="font-weight:600">Project Beta</div></div>
+        <div class="project"> <div style="font-weight:600">Project Gamma</div></div>
+      </div>
+    </section>
+
+    <section id="contact" style="margin-top:2rem">
+      <h2>Contact</h2>
+      <p class="lead">Fill the form to reach out — this uses <code>mailto:</code> so it opens the user's email client. Replace action with your backend endpoint if you have one.</p>
+      <div style="max-width:680px">
+        <form id="contactForm" class="card" onsubmit="return submitForm(event)">
+          <label>Name <input id="name" required placeholder="Your name"></label>
+          <label>Email <input id="email" type="email" required placeholder="you@example.com"></label>
+          <label>Message <textarea id="message" rows="5" required placeholder="Tell me about your project"></textarea></label>
+          <div style="display:flex;gap:.6rem">
+            <button type="submit">Send message</button>
+            <button type="button" onclick="resetForm()" style="background:transparent;border:1px solid rgba(255,255,255,0.06);">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+        <div>© <span id="year"></span> YourBrand — Built with ❤️</div>
+        <div style="color:var(--muted)">Made with a single HTML file. Edit and reuse freely.</div>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    // small helpers for menu and form
+    const menuBtn = document.getElementById('menuBtn');
+    menuBtn && menuBtn.addEventListener('click', ()=>{
+      const nav = document.querySelector('.nav-links');
+      const open = nav.style.display === 'flex';
+      nav.style.display = open ? 'none' : 'flex';
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function submitForm(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !email || !message){
+        alert('Please complete all fields');
+        return false;
+      }
+      // open mail client using mailto — replace with fetch() to send to a server
+      const subject = encodeURIComponent('Website enquiry from ' + name);
+      const body = encodeURIComponent('Name: '+name+"\nEmail: "+email+"\n\n"+message);
+      window.location.href = `mailto:hello@yourbrand.com?subject=${subject}&body=${body}`;
+      return false;
+    }
+    function resetForm(){document.getElementById('contactForm').reset()}
+  </script>
+</body>
+</html>
+
